@@ -73,5 +73,6 @@ button:active {
 .containerinfo p {
     padding: 20px;
     margin: 0 60px;
+    color:purple;
 
 }
