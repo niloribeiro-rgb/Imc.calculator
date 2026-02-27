@@ -1,6 +1,4 @@
 function caculator() {
-
-
     let peso = document.getElementById('Peso').value;
     let altura = document.getElementById('Altura').value;
 
@@ -9,7 +7,7 @@ function caculator() {
         // alert("oi")
     }
     else {
-        if (altura >= 300 || peso>700) {
+        if (altura >= 300 || peso > 700) {
             alert("Ops! Altura ou peso digitado errado. observe unidades de medidas recomendadas.");
             // erro > 300
         }
@@ -40,28 +38,33 @@ function caculator() {
 
                 let imc = Number(peso) / (Number(altura) * Number(altura));
                 imc = (imc).toFixed(1);
-                document.getElementById('show').innerText = "Seu IMC:" + imc;
-
-                // if (imc < 18.5) {
-
-                //     // alert("Abaixo do peso");
-                // }
-                // else if (imc >= 18 & imc < 24.9) {
-
-                //     // alert("Peso normal");
-                // }
-                // else if (imc >= 25 & imc < 29.9) {
-                //     // alert("Sobrepeso");
-                // }
-                // else if (imc >= 30 & imc < 34.9) {
-                //     // alert("Obesidade I")
-                // }
-                // else if (imc >= 35 & imc < 39.9) {
-                //     // alert("Obesidade II")
-                // }
-                // else if (imc >= 40) {
-                //     // alert("Obesidade III")
-                // }
+                
+                let situacao;
+                if (imc < 18.5) {
+                    situacao = "Abaixo do peso"
+                    // alert("Abaixo do peso");
+                }
+                else if (imc >= 18 & imc < 24.9) {
+                    situacao = "Peso normal"
+                    // alert("Peso normal");
+                }
+                else if (imc >= 25 & imc < 29.9) {
+                    situacao = "Sobrepeso"
+                    // alert("Sobrepeso");
+                }
+                else if (imc >= 30 & imc < 34.9) {
+                    situacao = "Obesidade I"
+                    // alert("Obesidade I")
+                }
+                else if (imc >= 35 & imc < 39.9) {
+                    situacao = "Obesidade II"
+                    // alert("Obesidade II")
+                }
+                else if (imc >= 40) {
+                    situacao = "Obesidade III"
+                    // alert("Obesidade III")
+                }
+                document.getElementById('show').innerText = "Seu IMC: " + imc +" "+ situacao;
             }
         }
     }
